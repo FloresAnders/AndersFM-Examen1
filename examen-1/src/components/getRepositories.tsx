@@ -11,7 +11,7 @@ const IndexPage = () => {
   };
 
   const handleSearch = async () => {
-    const token = "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";
+    const token = "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";
     const data = await getRepositories(username, token);
     setRepositories(data);
   };
@@ -27,7 +27,7 @@ const IndexPage = () => {
       <Carousel>
         {repositories.map((repository: any) => (
           <Carousel.Item key={repository.id}>
-            {/* <img className="d-block w-100" src="https://via.placeholder.com/800x400.png?text=Placeholder+Image" alt={repository.name} /> */}
+            <img className="d-block w-100" src="https://via.placeholder.com/800x400.png?text=Placeholder+Image" alt={repository.name} />
             <Carousel.Caption>
               <h3>{repository.name}</h3>
               <p>{repository.description}</p>

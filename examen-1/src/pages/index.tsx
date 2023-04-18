@@ -24,7 +24,7 @@ const IndexPage = () => {
   };
 
   const handleSearch = async () => {
-    const token = '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';
+    const token = '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';
     const data = await getRepositories(username, token);
     setRepositories(data);
   };
@@ -34,7 +34,7 @@ const IndexPage = () => {
       <Navbar handleSearch={handleSearch} handlePersonal={handleShowPersonal} />
       {showPersonal && <PersonalInformation onClose={handleClosePersonal} />}
       <h1 className="bg-danger">Biography</h1>
-      <p>Bienvenido a mi aplicación.</p>
+      <p>Some things about me.</p>
       {repositories.length > 0 && <RepositoryCarousel repositories={repositories} />}
       <ul>
         {repositories.map((repository: any) => (
