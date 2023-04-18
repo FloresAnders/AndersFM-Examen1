@@ -24,7 +24,7 @@ const IndexPage = () => {
   };
 
   const handleSearch = async () => {
-    const token = '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';
+    const token = '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';
     const data = await getRepositories(username, token);
     setRepositories(data);
   };
