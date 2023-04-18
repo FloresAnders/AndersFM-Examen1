@@ -24,7 +24,7 @@ const IndexPage = () => {
   };
 
   const handleSearch = async () => {
-    const token = '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';
+    const token = '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';
     const data = await getRepositories(username, token);
     setRepositories(data);
   };
