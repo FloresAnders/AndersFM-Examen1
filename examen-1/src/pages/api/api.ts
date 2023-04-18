@@ -11,4 +11,4 @@ export const getRepositories = async (username: string, token: string) => {
   return response.data;
 };
 
-getRepositories('FloresAnders', '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');
+getRepositories('FloresAnders', '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');

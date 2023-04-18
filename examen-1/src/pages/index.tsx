@@ -1,7 +1,8 @@
-import 'bootstrap/dist/css/bootstrap.min.css'; // Importar el CSS de Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from '../components/Navbar';
 import { useState } from 'react';
 import { getRepositories } from './api/api';
+import RepositoryCarousel from '../components/RepositoryCarousel';
 
 const IndexPage = () => {
   const [username, setUsername] = useState('FloresAnders');
@@ -12,7 +13,7 @@ const IndexPage = () => {
   };
 
   const handleSearch = async () => {
-    const token = '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';
+    const token = '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';
     const data = await getRepositories(username, token);
     setRepositories(data);
   };
@@ -22,6 +23,7 @@ const IndexPage = () => {
       <Navbar handleSearch={handleSearch} />
       <h1>Biography</h1>
       <p>Bienvenido a mi aplicación.</p>
+      {repositories.length > 0 && <RepositoryCarousel repositories={repositories} />}
       <ul>
         {repositories.map((repository: any) => (
           <li key={repository.id}>{repository.name}</li>

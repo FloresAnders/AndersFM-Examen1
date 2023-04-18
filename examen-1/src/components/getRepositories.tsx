@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { getRepositories } from '../pages/api/api';
-
+import { Carousel } from 'react-bootstrap';
 
 const IndexPage = () => {
   const [username, setUsername] = useState('FloresAnders');
@@ -24,11 +24,24 @@ const IndexPage = () => {
         <input type="text" value={username} onChange={handleUsernameChange} />
       </label>
       <button onClick={handleSearch}>Buscar</button>
-      <ul>
+      <Carousel>
         {repositories.map((repository: any) => (
-          <li key={repository.id}>{repository.name}</li>
+          <Carousel.Item key={repository.id}>
+            <img
+              className="d-block w-100"
+              src="https://via.placeholder.com/800x400.png?text=Placeholder+Image"
+              alt={repository.name}
+            />
+            <Carousel.Caption>
+              <h3>{repository.name}</h3>
+              <p>{repository.description}</p>
+              <a href={repository.html_url} target="_blank" rel="noopener noreferrer">
+                Ver en GitHub
+              </a>
+            </Carousel.Caption>
+          </Carousel.Item>
         ))}
-      </ul>
+      </Carousel>
     </div>
   );
 };
