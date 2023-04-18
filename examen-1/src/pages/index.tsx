@@ -24,14 +24,14 @@ const IndexPage = () => {
   };
 
   const handleSearch = async () => {
-    const token = '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';
+    const token = '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';
     const data = await getRepositories(username, token);
     setRepositories(data);
   };
 
   return (
     <div className="container">
-      <Navbar handleSearch={handleSearch} handlePersonal={handleShowPersonal} />
+      <Navbar handleSearch={handleSearch} handlePersonal={handleShowPersonal} activeTab={''}/>
       {showPersonal && <PersonalInformation onClose={handleClosePersonal} />}
       <h1 className="bg-danger">Biography</h1>
       <p>Some things about me.</p>
