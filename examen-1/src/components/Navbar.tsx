@@ -22,12 +22,6 @@ const MyNavbar = ({ handleSearch, handlePersonal, activeTab }: Props) => {
           <Nav.Link href="#link2" eventKey="repositories" onClick={handleSearch}>
             Repositories
           </Nav.Link>
-          <NavDropdown title="About Me" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action1">Acción 1</NavDropdown.Item>
-            <NavDropdown.Item href="#action2">Acción 2</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action3">Acción 3</NavDropdown.Item>
-          </NavDropdown>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
