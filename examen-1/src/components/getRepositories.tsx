@@ -17,12 +17,6 @@ const IndexPage = () => {
 
   return (
     <div>
-      <h1>Repositorios de Github</h1>
-      <label>
-        Nombre de usuario:
-        <input type="text" value={username} onChange={handleUsernameChange} />
-      </label>
-      <button onClick={handleSearch}>Buscar</button>
       <Carousel>
         {repositories.map((repository: any) => (
           <Carousel.Item key={repository.id}>

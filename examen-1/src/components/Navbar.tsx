@@ -13,7 +13,7 @@ const MyNavbar = ({ handleSearch, handlePersonal, activeTab }: Props) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto" activeKey={activeTab}>
-          <Nav.Link href="#home" eventKey="home">
+          <Nav.Link href="#home" eventKey="home" onClick={() => window.location.href = window.location.origin}>
             Home
           </Nav.Link>
           <Nav.Link href="#link1" eventKey="personal" onClick={handlePersonal}>
