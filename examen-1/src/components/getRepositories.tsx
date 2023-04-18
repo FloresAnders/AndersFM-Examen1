@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { getRepositories } from '../pages/api/api';
-import { Carousel } from 'react-bootstrap';
+import { useState } from "react";
+import { getRepositories } from "../pages/api/api";
+import { Carousel } from "react-bootstrap";
 
 const IndexPage = () => {
-  const [username, setUsername] = useState('FloresAnders');
+  const [username, setUsername] = useState("FloresAnders");
   const [repositories, setRepositories] = useState([]);
 
   const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -11,7 +11,7 @@ const IndexPage = () => {
   };
 
   const handleSearch = async () => {
-    const token = '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';
+    const token = "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";
     const data = await getRepositories(username, token);
     setRepositories(data);
   };
@@ -27,11 +27,7 @@ const IndexPage = () => {
       <Carousel>
         {repositories.map((repository: any) => (
           <Carousel.Item key={repository.id}>
-            <img
-              className="d-block w-100"
-              src="https://via.placeholder.com/800x400.png?text=Placeholder+Image"
-              alt={repository.name}
-            />
+            {/* <img className="d-block w-100" src="https://via.placeholder.com/800x400.png?text=Placeholder+Image" alt={repository.name} /> */}
             <Carousel.Caption>
               <h3>{repository.name}</h3>
               <p>{repository.description}</p>
